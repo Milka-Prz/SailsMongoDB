@@ -1,0 +1,32 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>APELLIDO</th>
+            <th>EMAIL</th>
+            <th>CONTRASEÑA</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% test.forEach(function(usuarios){ %>
+            <tr>
+                <td><%= usuarios.id %></td>
+                <td><%= usuarios.nombre %></td>
+                <td><%= usuarios.apellido %></td>
+                <td><%= usuarios.email %></td>
+                <td><%= usuarios.contraseña %></td>
+                <td>
+                    <a href="/general/formedit" class="btn btn-primary">Actualizar datos</a>
+                    <form action="borrar" method="POST" class="d-inline">
+                        <input type="submit" value="eliminar" class="btn btn-danger">
+                    </form>      
+                </td>
+            </tr>
+        <% }) %>
+        
+    </tbody>
+</table>
+
+<center><a href="/general/formadd" class="btn"> Añadir usuario</a></center>
+
